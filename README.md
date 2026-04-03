@@ -10,6 +10,7 @@ Configuration files for AI coding agents.
 | `claudecode/settings.json` | `~/.claude/settings.json` |
 | `opencode/AGENTS.md` | `~/.opencode/AGENTS.md` |
 | `opencode/opencode.json` | `~/.opencode/opencode.json` |
+| `codex/AGENTS.md` | `~/.codex/AGENTS.md` |
 
 ## Agent Skills
 

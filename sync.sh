@@ -15,6 +15,7 @@ declare -A FILE_MAP=(
   ["claudecode/settings.json"]="$HOME/.claude/settings.json"
   ["opencode/AGENTS.md"]="$HOME/.opencode/AGENTS.md"
   ["opencode/opencode.json"]="$HOME/.opencode/opencode.json"
+  ["codex/AGENTS.md"]="$HOME/.codex/AGENTS.md"
 )
 
 updated=0
