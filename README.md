@@ -1,16 +1,26 @@
 # Agent Config
 
-Configuration files for AI coding agents.
+Centralized configuration files for AI coding agents: [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Codex](https://github.com/openai/codex), and [OpenCode](https://github.com/opencode-ai/opencode).
+
+## Usage
+
+Run the sync script to copy config files to their target locations:
+
+```sh
+./sync.sh
+```
+
+The script diffs each file against its target and prompts before creating or updating.
 
 ## File Placement
 
-| File | Copy to |
-|------|---------|
-| `claudecode/CLAUDE.md` | `~/.claude/CLAUDE.md` |
-| `claudecode/settings.json` | `~/.claude/settings.json` |
-| `opencode/AGENTS.md` | `~/.config/opencode/AGENTS.md` |
-| `opencode/opencode.json` | `~/.config/opencode/opencode.json` |
-| `codex/AGENTS.md` | `~/.codex/AGENTS.md` |
+| File | Target | Description |
+|------|--------|-------------|
+| `claudecode/CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions |
+| `claudecode/settings.json` | `~/.claude/settings.json` | Permissions and plugins |
+| `codex/AGENTS.md` | `~/.codex/AGENTS.md` | Global instructions |
+| `opencode/AGENTS.md` | `~/.config/opencode/AGENTS.md` | Global instructions |
+| `opencode/opencode.json` | `~/.config/opencode/opencode.json` | Provider and model config |
 
 ## Agent Skills
 
