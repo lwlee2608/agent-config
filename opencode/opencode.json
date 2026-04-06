@@ -33,7 +33,8 @@
         "z-ai/glm-5": {
           "options": {
             "provider": {
-              "sort": "throughput"
+              "order": ["z-ai"],
+              "allow_fallbacks": false
             }
           }
         }
