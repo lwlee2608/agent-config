@@ -13,6 +13,10 @@
       "Bash(git diff *)",
       "Bash(git status *)",
       "Bash(git show *)",
+      "Bash(go mod tidy)",
+      "Bash(make build)",
+      "Bash(make test)",
+      "Bash(make lint)",
       "WebFetch",
       "Read",
       "Search"
