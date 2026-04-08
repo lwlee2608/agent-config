@@ -3,7 +3,7 @@
   "provider": {
     "openrouter": {
       "options": {
-        "provider": { "sort": "throughput" }
+        "provider": { "sort": "latency" }
       },
       "models": {
         "moonshotai/kimi-k2.5": {
@@ -19,22 +19,28 @@
             "provider": {
               "order": ["minimax/highspeed"],
               "allow_fallbacks": false,
-              "sort": "throughput"
+              "sort": "latency"
             }
           }
         },
         "minimax/minimax-m2.5": {
           "options": {
             "provider": {
-              "sort": "throughput"
+              "sort": "latency"
             }
           }
         },
+        "z-ai/glm-5.1": {
+          "options": {
+            "provider": {
+              "sort": "latency"
+            }
+          }
+        }
         "z-ai/glm-5": {
           "options": {
             "provider": {
-              "order": ["z-ai"],
-              "allow_fallbacks": false
+              "sort": "latency"
             }
           }
         }
