@@ -11,7 +11,11 @@
 
 ## Shell Commands
 
-1. **No unnecessary `cd`**: Never use `cd <dir> && <cmd>` when you are already in that directory. Use absolute paths or run the command directly instead. This avoids unnecessary permission prompts for compound commands.
+1. **No unnecessary `cd`**: Before writing `cd <dir> && <cmd>`, check if `<dir>` is already the current working directory. If it is, just run `<cmd>` directly — the `cd` is redundant and causes unnecessary permission prompts.
+   - BAD: `cd /home/user/project && make build` (when already in /home/user/project)
+   - GOOD: `make build`
+   - BAD: `cd /home/user/project && go test ./...` (when already in /home/user/project)
+   - GOOD: `go test ./...`
 
 ## Git Conventions
 
