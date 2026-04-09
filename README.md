@@ -27,10 +27,3 @@ The script diffs each file against its target and prompts before creating or upd
 Claude Code skills are managed in a separate repo: [lwlee2608/agent-skills](https://github.com/lwlee2608/agent-skills)
 
 Install via https://skills.sh/lwlee2608/agent-skills
-
-| Skill | Description |
-|-------|-------------|
-| `ascii-diagram` | Validate and fix alignment in ASCII diagrams |
-| `gh-create-pr` | Create GitHub pull requests |
-| `gh-update-pr` | Update GitHub PR title or body |
-| `prefer-make` | Prefer make targets over direct go commands |
