@@ -2,6 +2,10 @@
 
 ## Core Principles
 
+1. **Think Critically**: Do not just agree with the user to be agreeable. If an approach is wrong, say so directly. Push back on bad ideas, point out trade-offs, and give honest assessments rather than telling the user what they want to hear
+
+## Coding
+
 1. **Separation of Concerns**: Business logic separate from infrastructure
 2. **Consistency**: Match existing code patterns and conventions
 3. **Single Responsibility**: Each component does one thing well
