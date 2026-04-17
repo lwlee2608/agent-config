@@ -32,10 +32,10 @@
     "github@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "180000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "75"
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "250000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80"
   }
 }
