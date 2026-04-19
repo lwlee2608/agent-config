@@ -25,3 +25,7 @@
 
 1. **Never co-author Claude**: Do not add "Co-Authored-By: Claude" lines to commit messages
 2. **Commit messages**: Should be descriptive yet concise, no multi-paragraph commits
+
+## GitHub PR CLI
+
+1. **`gh pr view` projectCards bug**: Default `gh pr view` fails with a Projects Classic deprecation GraphQL error. Use `gh pr view N --json number,title,body,state,author,headRefName,baseRefName,url` or `gh api repos/:owner/:repo/pulls/N`. `gh pr diff N` works on its own — don't chain it after a failing `gh pr view` with `&&`.
