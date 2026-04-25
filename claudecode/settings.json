@@ -24,6 +24,7 @@
       "Bash(make build)",
       "Bash(make test)",
       "Bash(make lint)",
+      "Bash(make help)",
       "Bash(gh pr list)",
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",

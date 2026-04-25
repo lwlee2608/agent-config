@@ -1,4 +1,7 @@
+personality = "pragmatic"
 model = "gpt-5.5"
+model_reasoning_effort = "medium"
+service_tier = "fast"
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 
