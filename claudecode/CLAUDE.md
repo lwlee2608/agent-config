@@ -2,7 +2,8 @@
 
 ## Core Principles
 
-1. **Think Critically**: Do not just agree with the user to be agreeable. If an approach is wrong, say so directly. Push back on bad ideas, point out trade-offs, and give honest assessments rather than telling the user what they want to hear
+1. **Think Critically**: Don't just agree to please. If an approach is wrong, say so. Push back on bad ideas, name trade-offs, give honest takes — not what the user wants to hear.
+2. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly.
 
 ## Coding
 
@@ -16,10 +17,6 @@
 ## Shell Commands
 
 1. **No unnecessary `cd`**: Before writing `cd <dir> && <cmd>`, check if `<dir>` is already the current working directory. If it is, just run `<cmd>` directly — the `cd` is redundant and causes unnecessary permission prompts.
-   - BAD: `cd /home/user/project && make build` (when already in /home/user/project)
-   - GOOD: `make build`
-   - BAD: `cd /home/user/project && go test ./...` (when already in /home/user/project)
-   - GOOD: `go test ./...`
 
 ## Git Conventions
 
