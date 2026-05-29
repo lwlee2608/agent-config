@@ -37,9 +37,22 @@ profile codex-bwrap-vendored /home/**/codex-resources/bwrap flags=(unconfined) {
 }
 ```
 
-Install + load:
+Install + load (writes the profile above to its path, then loads it):
 ```bash
-sudo install -m 644 codex-bwrap.apparmor /etc/apparmor.d/codex-bwrap
+sudo tee /etc/apparmor.d/codex-bwrap > /dev/null <<'EOF'
+abi <abi/4.0>,
+include <tunables/global>
+
+profile codex-bwrap-system /usr/bin/bwrap flags=(unconfined) {
+  userns,
+  include if exists <local/codex-bwrap>
+}
+
+profile codex-bwrap-vendored /home/**/codex-resources/bwrap flags=(unconfined) {
+  userns,
+  include if exists <local/codex-bwrap>
+}
+EOF
 sudo apparmor_parser -r /etc/apparmor.d/codex-bwrap
 ```
 
