@@ -14,7 +14,7 @@
 3. **Single Responsibility**: Each component does one thing well
 4. **Clean Boundaries**: Clear separation between layers (API, Service, Domain)
 5. **Code is Liability**: Keep code as simple and short as possible
-6. **Comment Sparingly**: Only comment when doing something weird
+6. **Comment Sparingly**: Default to ZERO comments. Only comment *why* when non-obvious (workaround, gotcha).
 
 ## Shell Commands
 
