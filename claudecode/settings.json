@@ -6,6 +6,7 @@
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0"
   },
   "permissions": {
+    "defaultMode": "auto",
     "allow": [
       "Bash(grep *)",
       "Bash(tree *)",
