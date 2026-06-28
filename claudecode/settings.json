@@ -43,5 +43,6 @@
   "effortLevel": "xhigh",
   "editorMode": "vim",
   "skipAutoPermissionPrompt": true,
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "disableClaudeAiConnectors": true
 }
