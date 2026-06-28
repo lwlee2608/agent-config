@@ -42,5 +42,6 @@
   },
   "effortLevel": "xhigh",
   "editorMode": "vim",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
 }
