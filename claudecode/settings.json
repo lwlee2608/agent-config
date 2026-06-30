@@ -6,7 +6,6 @@
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0"
   },
   "permissions": {
-    "defaultMode": "auto",
     "allow": [
       "Bash(grep *)",
       "Bash(tree *)",
@@ -32,17 +31,19 @@
       "WebFetch",
       "Read",
       "Search"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "disableClaudeAiConnectors": true,
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": false,
-    "github@claude-plugins-official": false,
-    "rust-analyzer-lsp@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
   },
-  "effortLevel": "xhigh",
-  "editorMode": "vim",
-  "skipAutoPermissionPrompt": true,
+  "effortLevel": "high",
   "tui": "fullscreen",
-  "disableClaudeAiConnectors": true
+  "editorMode": "vim",
+  "skipAutoPermissionPrompt": true
 }
