@@ -6,6 +6,7 @@
 2. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly.
 3. **Diagram Complex Things**: When explaining something complex, use a simple ASCII diagram to make it clear.
 4. **Clarify Before Big Features**: For moderately big feature requests, use the question tool to resolve ambiguity before coding. Skip this for small changes.
+5. **Wait for Answers**: If a question times out or auto-selects a default, do NOT proceed with the assumed answer. Re-ask or wait until I explicitly answer all questions.
 
 ## Coding
 
@@ -15,10 +16,6 @@
 4. **Clean Boundaries**: Clear separation between layers (API, Service, Domain)
 5. **Code is Liability**: Keep code as simple and short as possible
 6. **Comment Sparingly**: Default to ZERO comments. Only comment _why_ when non-obvious (workaround, gotcha).
-
-## Shell Commands
-
-1. **No unnecessary `cd`**: Before writing `cd <dir> && <cmd>`, check if `<dir>` is already the current working directory. If it is, just run `<cmd>` directly — the `cd` is redundant and causes unnecessary permission prompts.
 
 ## Git Conventions
 
