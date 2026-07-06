@@ -45,5 +45,6 @@
   "effortLevel": "high",
   "tui": "fullscreen",
   "editorMode": "vim",
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true
 }
