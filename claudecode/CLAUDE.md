@@ -15,7 +15,7 @@
 3. **Single Responsibility**: Each component does one thing well
 4. **Clean Boundaries**: Clear separation between layers (API, Service, Domain)
 5. **Code is Liability**: Keep code as simple and short as possible
-6. **Comment Sparingly**: Default to ZERO comments. Only comment _why_ when non-obvious (workaround, gotcha).
+6. **No Comments**: Do not write comments. The only exception is a comment explaining a workaround or gotcha.
 
 ## Git Conventions
 
