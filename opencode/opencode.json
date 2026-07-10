@@ -57,6 +57,15 @@
         }
       },
       "models": {
+        "gpt-5.6-sol-fast": {
+          "name": "GPT-5.6 Sol Fast",
+          "reasoning": true,
+          "variants": { "none": {}, "low": {}, "medium": {}, "high": {}, "xhigh": {} },
+          "attachment": true,
+          "tool_call": true,
+          "temperature": false,
+          "modalities": { "input": ["text", "image"], "output": ["text"] }
+        },
         "gpt-5.6-sol": {
           "name": "GPT-5.6 Sol",
           "reasoning": true,
@@ -66,8 +75,26 @@
           "temperature": false,
           "modalities": { "input": ["text", "image"], "output": ["text"] }
         },
+        "gpt-5.6-terra-fast": {
+          "name": "GPT-5.6 Terra Fast",
+          "reasoning": true,
+          "variants": { "none": {}, "low": {}, "medium": {}, "high": {}, "xhigh": {} },
+          "attachment": true,
+          "tool_call": true,
+          "temperature": false,
+          "modalities": { "input": ["text", "image"], "output": ["text"] }
+        },
         "gpt-5.6-terra": {
           "name": "GPT-5.6 Terra",
+          "reasoning": true,
+          "variants": { "none": {}, "low": {}, "medium": {}, "high": {}, "xhigh": {} },
+          "attachment": true,
+          "tool_call": true,
+          "temperature": false,
+          "modalities": { "input": ["text", "image"], "output": ["text"] }
+        },
+        "gpt-5.6-luna-fast": {
+          "name": "GPT-5.6 Luna Fast",
           "reasoning": true,
           "variants": { "none": {}, "low": {}, "medium": {}, "high": {}, "xhigh": {} },
           "attachment": true,
