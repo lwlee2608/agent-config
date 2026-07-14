@@ -16,8 +16,15 @@ fmt_k() {
 line="$model"
 [ -n "$effort" ] && line="$line [$effort]"
 
-if [ -n "$used" ]; then
+window="${CLAUDE_CODE_AUTO_COMPACT_WINDOW:-$max_tokens}"
+
+if [ -n "$current_tokens" ] && [ -n "$window" ] && [ "$window" -gt 0 ] 2>/dev/null; then
+  used_int=$(awk -v c="$current_tokens" -v w="$window" 'BEGIN { printf "%d", (c * 100 / w) + 0.5 }')
+elif [ -n "$used" ]; then
   used_int=$(printf '%.0f' "$used")
+fi
+
+if [ -n "$used_int" ]; then
   width=21
   filled=$(( used_int * width / 100 ))
   [ "$filled" -gt "$width" ] && filled=$width
@@ -29,7 +36,6 @@ if [ -n "$used" ]; then
 
   line="$line  [$bar] ${used_int}%"
 
-  window="${CLAUDE_CODE_AUTO_COMPACT_WINDOW:-$max_tokens}"
   if [ -n "$current_tokens" ] && [ -n "$window" ]; then
     cur_k=$(fmt_k "$current_tokens")
     win_k=$(fmt_k "$window")
