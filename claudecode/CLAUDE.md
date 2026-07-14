@@ -22,3 +22,4 @@
 1. **Never co-author Claude**: Do not add "Co-Authored-By: Claude" lines to commit messages
 2. **Commit messages**: Should be descriptive yet concise, no multi-paragraph commits
 3. **Never push without asking**: Do not `git push` unless explicitly told to.
+4. **Prefer merge commits**: Use a normal merge commit when merging, not a squash merge.
