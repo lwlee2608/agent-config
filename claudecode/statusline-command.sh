@@ -37,14 +37,14 @@ if [ -n "$used" ]; then
   fi
 fi
 
-if [ -n "$five_hour_pct" ]; then
-  five_int=$(printf '%.0f' "$five_hour_pct")
-  rate_str="5h: ${five_int}%"
-  if [ -n "$five_hour_reset" ]; then
-    reset_time=$(date -d "@$five_hour_reset" +"%-I:%M%p" 2>/dev/null | tr 'AP' 'ap')
-    [ -n "$reset_time" ] && rate_str="$rate_str (resets $reset_time)"
-  fi
-  line="$line  •  $rate_str"
-fi
+# if [ -n "$five_hour_pct" ]; then
+#   five_int=$(printf '%.0f' "$five_hour_pct")
+#   rate_str="5h: ${five_int}%"
+#   if [ -n "$five_hour_reset" ]; then
+#     reset_time=$(date -d "@$five_hour_reset" +"%-I:%M%p" 2>/dev/null | tr 'AP' 'ap')
+#     [ -n "$reset_time" ] && rate_str="$rate_str (resets $reset_time)"
+#   fi
+#   line="$line  •  $rate_str"
+# fi
 
 printf "\033[2m%s\033[0m" "$line"
