@@ -18,6 +18,7 @@ The script diffs each file against its target and prompts before creating or upd
 |------|--------|-------------|
 | `claudecode/CLAUDE.md` | `~/.claude/CLAUDE.md` | Global instructions |
 | `claudecode/settings.json` | `~/.claude/settings.json` | Permissions and plugins |
+| `claudecode/statusline-command.sh` | `~/.claude/statusline-command.sh` | Custom statusline script |
 | `codex/AGENTS.md` | `~/.codex/AGENTS.md` | Global instructions |
 | `opencode/AGENTS.md` | `~/.config/opencode/AGENTS.md` | Global instructions |
 | `opencode/opencode.json` | `~/.config/opencode/opencode.json` | Provider and model config |

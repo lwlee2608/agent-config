@@ -13,6 +13,7 @@ RESET='\033[0m'
 declare -A FILE_MAP=(
   ["claudecode/CLAUDE.md"]="$HOME/.claude/CLAUDE.md"
   ["claudecode/settings.json"]="$HOME/.claude/settings.json"
+  ["claudecode/statusline-command.sh"]="$HOME/.claude/statusline-command.sh"
   ["opencode/AGENTS.md"]="$HOME/.config/opencode/AGENTS.md"
   ["opencode/opencode.json"]="$HOME/.config/opencode/opencode.json"
   ["codex/AGENTS.md"]="$HOME/.codex/AGENTS.md"
