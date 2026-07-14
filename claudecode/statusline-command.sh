@@ -29,10 +29,11 @@ if [ -n "$used" ]; then
 
   line="$line  [$bar] ${used_int}%"
 
-  if [ -n "$current_tokens" ] && [ -n "$max_tokens" ]; then
+  window="${CLAUDE_CODE_AUTO_COMPACT_WINDOW:-$max_tokens}"
+  if [ -n "$current_tokens" ] && [ -n "$window" ]; then
     cur_k=$(fmt_k "$current_tokens")
-    max_k=$(fmt_k "$max_tokens")
-    line="$line  ${cur_k} / ${max_k} tokens"
+    win_k=$(fmt_k "$window")
+    line="$line  ${cur_k} / ${win_k} tokens"
   fi
 fi
 
