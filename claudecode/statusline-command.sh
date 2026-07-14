@@ -8,6 +8,7 @@ current_tokens=$(echo "$input" | jq -r '.context_window.total_input_tokens // em
 max_tokens=$(echo "$input" | jq -r '.context_window.context_window_size // empty')
 five_hour_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 five_hour_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+total_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 
 fmt_k() {
   awk -v n="$1" 'BEGIN { printf "%dk", int(n / 1000 + 0.5) }'
@@ -41,6 +42,11 @@ if [ -n "$used_int" ]; then
     win_k=$(fmt_k "$window")
     line="$line  ${cur_k} / ${win_k} tokens"
   fi
+fi
+
+if [ -n "$total_cost" ]; then
+  cost_str=$(awk -v c="$total_cost" 'BEGIN { printf "$%.2f", c }')
+  line="$line  •  $cost_str"
 fi
 
 # if [ -n "$five_hour_pct" ]; then
