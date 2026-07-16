@@ -26,14 +26,17 @@ elif [ -n "$used" ]; then
 fi
 
 if [ -n "$used_int" ]; then
-  width=21
+  width=18
   filled=$(( used_int * width / 100 ))
   [ "$filled" -gt "$width" ] && filled=$width
   empty=$(( width - filled ))
 
-  bar=""
-  for ((i = 0; i < filled; i++)); do bar+="█"; done
-  for ((i = 0; i < empty; i++)); do bar+="░"; done
+  esc=$'\033'
+  bar="${esc}[0m${esc}[38;5;252m"
+  for ((i = 0; i < filled; i++)); do bar+="━"; done
+  bar+="${esc}[38;5;238m"
+  for ((i = 0; i < empty; i++)); do bar+="━"; done
+  bar+="${esc}[0m${esc}[2m"
 
   line="$line  [$bar] ${used_int}%"
 
