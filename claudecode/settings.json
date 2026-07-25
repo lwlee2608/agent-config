@@ -28,6 +28,7 @@
       "Bash(gh pr list)",
       "Bash(gh pr view *)",
       "Bash(gh pr diff *)",
+      "Bash(gh pr merge *)",
       "WebFetch",
       "Read",
       "Search"
