@@ -6,7 +6,6 @@
 2. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly.
 3. **Diagram Complex Things**: When explaining something complex, use a simple ASCII diagram to make it clear.
 4. **Clarify Before Big Features**: For moderately big feature requests, use the question tool to resolve ambiguity before coding. Skip this for small changes.
-5. **Wait for Answers**: If a question times out or auto-selects a default, do NOT proceed with the assumed answer. Re-ask or wait until I explicitly answer all questions.
 
 ## Coding
 
