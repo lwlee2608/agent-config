@@ -40,46 +40,6 @@
     "openrouter": {
       "options": {
         "provider": { "sort": "latency" }
-      },
-      "models": {
-        "moonshotai/kimi-k2.5": {
-          "options": {
-            "provider": {
-              "order": ["moonshotai"],
-              "allow_fallbacks": false
-            }
-          }
-        },
-        "minimax/minimax-m2.7": {
-          "options": {
-            "provider": {
-              "order": ["minimax/highspeed"],
-              "allow_fallbacks": false,
-              "sort": "latency"
-            }
-          }
-        },
-        "minimax/minimax-m2.5": {
-          "options": {
-            "provider": {
-              "sort": "latency"
-            }
-          }
-        },
-        "z-ai/glm-5.1": {
-          "options": {
-            "provider": {
-              "sort": "latency"
-            }
-          }
-        },
-        "z-ai/glm-5": {
-          "options": {
-            "provider": {
-              "sort": "latency"
-            }
-          }
-        }
       }
     }
   }
