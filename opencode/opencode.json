@@ -3,13 +3,37 @@
   "permission": {
     "external_directory": {
       "*": "allow",
-      "~/.ssh/*": "deny",
-      "~/.aws/*": "deny",
-      "~/.gnupg/*": "deny"
+      "~/.ssh/*": "ask",
+      "~/.gnupg/*": "ask",
+      "~/.aws/*": "ask",
+      "~/.kube/*": "ask",
+      "~/.docker/*": "ask",
+      "~/.config/gh/*": "ask",
+      "~/.local/share/opencode/auth*": "ask"
+    },
+    "read": {
+      "*": "allow",
+      "*.pem": "ask",
+      "*.key": "ask",
+      "*.p12": "ask",
+      "*.pfx": "ask",
+      "*id_rsa*": "ask",
+      "*id_ed25519*": "ask",
+      "*credentials*": "ask",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow"
     },
     "edit": {
       "*": "allow",
-      "../*": "ask"
+      "../*": "ask",
+      "*.pem": "ask",
+      "*.key": "ask",
+      "*id_rsa*": "ask",
+      "*credentials*": "ask",
+      "*.env": "ask",
+      "*.env.*": "ask",
+      "*.env.example": "allow"
     }
   },
   "provider": {
