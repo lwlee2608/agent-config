@@ -44,6 +44,7 @@
     "code-simplifier@claude-plugins-official": true
   },
   "effortLevel": "high",
+  "outputStyle": "Simple",
   "tui": "fullscreen",
   "editorMode": "vim",
   "agentPushNotifEnabled": true,
