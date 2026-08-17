@@ -60,7 +60,7 @@ fi
 
 if [ -n "$cached" ] && [ $((cached + uncached)) -gt 0 ]; then
   hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
-  line="$line  •  cache ${hit}% ($(fmt_t "$uncached") new)"
+  line="$line  •  cache $(fmt_t "$cached") / $(fmt_t "$uncached") new (${hit}%)"
 fi
 
 # if [ -n "$five_hour_pct" ]; then
