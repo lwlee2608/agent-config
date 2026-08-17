@@ -9,8 +9,16 @@ max_tokens=$(echo "$input" | jq -r '.context_window.context_window_size // empty
 five_hour_pct=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 five_hour_reset=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 total_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
-cached=$(echo "$input" | jq -r '.context_window.current_usage.cache_read_input_tokens // empty')
-uncached=$(echo "$input" | jq -r '.context_window.current_usage | (.input_tokens // 0) + (.cache_creation_input_tokens // 0)')
+transcript=$(echo "$input" | jq -r '.transcript_path // empty')
+
+if [ -f "$transcript" ]; then
+  read -r cached uncached < <(jq -nr '
+    reduce (inputs | select(.message.usage) | {k: (.requestId // .uuid), u: .message.usage}) as $e ({}; .[$e.k] = $e.u)
+    | [.[]]
+    | [(map(.cache_read_input_tokens // 0) | add),
+       (map((.input_tokens // 0) + (.cache_creation_input_tokens // 0)) | add)]
+    | @tsv' "$transcript" 2>/dev/null)
+fi
 
 fmt_k() {
   awk -v n="$1" 'BEGIN { printf "%dk", int(n / 1000 + 0.5) }'
@@ -50,17 +58,17 @@ if [ -n "$used_int" ]; then
     cur_k=$(fmt_k "$current_tokens")
     win_k=$(fmt_k "$window")
     line="$line  ${cur_k} / ${win_k} tokens"
+
+    if [ -n "$cached" ] && [ $((cached + uncached)) -gt 0 ]; then
+      hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
+      line="$line (${hit}% cached, $(fmt_t "$uncached") new)"
+    fi
   fi
 fi
 
 if [ -n "$total_cost" ]; then
   cost_str=$(awk -v c="$total_cost" 'BEGIN { printf "$%.2f", c }')
   line="$line  •  $cost_str"
-fi
-
-if [ -n "$cached" ] && [ $((cached + uncached)) -gt 0 ]; then
-  hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
-  line="$line  •  cache $(fmt_t "$cached") / $(fmt_t "$uncached") new (${hit}%)"
 fi
 
 # if [ -n "$five_hour_pct" ]; then
