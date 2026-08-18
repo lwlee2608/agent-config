@@ -67,7 +67,7 @@ if [ -n "$total_cost" ]; then
     hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
     cost_str="$cost_str (${hit}% cached, $(fmt_t "$uncached") new)"
   fi
-  line="$line  •  $cost_str"
+  line="$line • $cost_str"
 fi
 
 # if [ -n "$five_hour_pct" ]; then
