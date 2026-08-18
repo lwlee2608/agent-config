@@ -58,16 +58,15 @@ if [ -n "$used_int" ]; then
     cur_k=$(fmt_k "$current_tokens")
     win_k=$(fmt_k "$window")
     line="$line  ${cur_k} / ${win_k} tokens"
-
-    if [ -n "$cached" ] && [ $((cached + uncached)) -gt 0 ]; then
-      hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
-      line="$line (${hit}% cached, $(fmt_t "$uncached") new)"
-    fi
   fi
 fi
 
 if [ -n "$total_cost" ]; then
   cost_str=$(awk -v c="$total_cost" 'BEGIN { printf "$%.2f", c }')
+  if [ -n "$cached" ] && [ $((cached + uncached)) -gt 0 ]; then
+    hit=$(awk -v r="$cached" -v u="$uncached" 'BEGIN { printf "%d", (r * 100 / (r + u)) + 0.5 }')
+    cost_str="$cost_str (${hit}% cached, $(fmt_t "$uncached") new)"
+  fi
   line="$line  •  $cost_str"
 fi
 
