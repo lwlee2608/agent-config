@@ -33,6 +33,10 @@
       "Read",
       "Search"
     ],
+    "deny": [
+      "EnterPlanMode",
+      "ExitPlanMode"
+    ],
     "defaultMode": "auto"
   },
   "disableClaudeAiConnectors": true,
