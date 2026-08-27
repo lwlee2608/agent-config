@@ -45,10 +45,17 @@
   "disableArtifact": true,
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": false,
     "github@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "code-simplifier@claude-plugins-official": false
+  },
+  "skillOverrides": {
+    "use-railway": "off",
+    "framer-motion-animator": "off",
+    "opencode-review": "off",
+    "linear": "off",
+    "handoff": "off"
   },
   "effortLevel": "high",
   "outputStyle": "Concise",
