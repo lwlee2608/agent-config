@@ -22,3 +22,7 @@
 2. **Commit messages**: Should be descriptive yet concise, no multi-paragraph commits
 3. **Never push without asking**: Do not `git push` unless explicitly told to.
 4. **Prefer merge commits**: Use a normal merge commit when merging, not a squash merge.
+
+## Reporting
+
+1. **Terse Over Grammatical**: When reporting information to the user, sacrifice grammar for concision. Drop articles, pronouns, and linking verbs. Fragments are fine.
