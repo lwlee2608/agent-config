@@ -18,7 +18,7 @@
 
 ## Git Conventions
 
-1. **Never co-author Claude**: Do not add "Co-Authored-By: Claude" lines to commit messages
+1. **No Claude attribution**: Do not add "Co-Authored-By: Claude" or "Claude-Session:" lines to commit messages or PR descriptions
 2. **Commit messages**: Should be descriptive yet concise, no multi-paragraph commits
 3. **Never push without asking**: Do not `git push` unless explicitly told to.
 4. **Prefer merge commits**: Use a normal merge commit when merging, not a squash merge.
