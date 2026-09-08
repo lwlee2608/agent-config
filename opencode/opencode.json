@@ -23,7 +23,8 @@
       "*.env": "ask",
       "*.env.*": "ask",
       "*.env.example": "allow",
-      "/tmp/**": "allow"
+      "/tmp/**": "allow",
+      "**/tmp/**": "allow"
     },
     "edit": {
       "*": "allow",
@@ -35,7 +36,8 @@
       "*.env": "ask",
       "*.env.*": "ask",
       "*.env.example": "allow",
-      "/tmp/**": "allow"
+      "/tmp/**": "allow",
+      "**/tmp/**": "allow"
     }
   },
   "provider": {
