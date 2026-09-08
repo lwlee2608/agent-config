@@ -16,6 +16,12 @@
 5. **Code is Liability**: Keep code as simple and short as possible
 6. **Comment Sparingly**: Only comment when doing something weird
 
+## Running Tests
+
+1. **No Benchmarks**: Skip benchmarks and perf suites unless asked.
+2. **No Flake Hunts**: Run a suite once. No `-count=1000` or `-cpu` sweeps to chase timing bugs; report unverified instead.
+3. **Ask Before Long Runs**: Over ~30s, ask first.
+
 ## Git Conventions
 
 1. **Commit messages**: Should be descriptive yet concise
