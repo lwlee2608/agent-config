@@ -12,16 +12,33 @@ total_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 
 if [ -f "$transcript" ]; then
-  read -r cached uncached < <(jq -nr '
-    reduce (inputs | select(.message.usage) | {k: (.requestId // .uuid), u: .message.usage}) as $e ({}; .[$e.k] = $e.u)
-    | [.[]]
-    | [(map(.cache_read_input_tokens // 0) | add),
-       (map((.input_tokens // 0) + (.cache_creation_input_tokens // 0)) | add)]
+  read -r cached uncached elapsed < <(jq -nr '
+    reduce inputs as $e ({u: {}, s: null, a: null};
+        (if $e.message.usage then .u[($e.requestId // $e.uuid)] = $e.message.usage else . end)
+      | (if $e.type == "user" and $e.origin.kind == "human" and ($e.isSidechain | not)
+         then .s = $e.timestamp | .a = null
+         elif $e.type == "assistant" and $e.timestamp
+         then .a = $e.timestamp
+         else . end))
+    | [([.u[]] | map(.cache_read_input_tokens // 0) | add // 0),
+       ([.u[]] | map((.input_tokens // 0) + (.cache_creation_input_tokens // 0)) | add // 0),
+       (if .s and .a
+        then ((.a[0:19] + "Z" | fromdateiso8601) - (.s[0:19] + "Z" | fromdateiso8601))
+        else "-" end)]
     | @tsv' "$transcript" 2>/dev/null)
 fi
 
 fmt_k() {
   awk -v n="$1" 'BEGIN { printf "%dk", int(n / 1000 + 0.5) }'
+}
+
+fmt_d() {
+  awk -v n="$1" 'BEGIN {
+    n = int(n)
+    if (n < 60) printf "%ds", n
+    else if (n < 3600) printf "%dm%02ds", n / 60, n % 60
+    else printf "%dh%02dm", n / 3600, (n % 3600) / 60
+  }'
 }
 
 fmt_t() {
@@ -68,6 +85,10 @@ if [ -n "$total_cost" ]; then
     cost_str="$cost_str (${hit}% cached, $(fmt_t "$uncached") new)"
   fi
   line="$line • $cost_str"
+fi
+
+if [ -n "$elapsed" ] && [ "$elapsed" != "-" ] 2>/dev/null; then
+  line="$line • $(fmt_d "$elapsed")"
 fi
 
 # if [ -n "$five_hour_pct" ]; then
