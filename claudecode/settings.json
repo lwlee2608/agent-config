@@ -34,10 +34,7 @@
       "Read",
       "Search"
     ],
-    "deny": [
-      "EnterPlanMode",
-      "ExitPlanMode"
-    ],
+    "deny": ["EnterPlanMode", "ExitPlanMode"],
     "defaultMode": "auto"
   },
   "disableClaudeAiConnectors": true,
@@ -57,10 +54,10 @@
     "linear": "off",
     "handoff": "off"
   },
+  "editorMode": "vim",
   "effortLevel": "high",
   "outputStyle": "Concise",
   "tui": "fullscreen",
-  "editorMode": "vim",
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "statusLine": {

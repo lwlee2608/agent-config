@@ -23,6 +23,18 @@ declare -A FILE_MAP=(
 updated=0
 skipped=0
 
+normalize() {
+  if [[ "$1" == *.json ]]; then
+    jq -S . "$1"
+  else
+    cat "$1"
+  fi
+}
+
+files_differ() {
+  ! diff -q <(normalize "$1") <(normalize "$2") > /dev/null 2>&1
+}
+
 for src_rel in "${!FILE_MAP[@]}"; do
   src="$REPO_DIR/$src_rel"
   dst="${FILE_MAP[$src_rel]}"
@@ -46,13 +58,13 @@ for src_rel in "${!FILE_MAP[@]}"; do
     continue
   fi
 
-  if diff -q "$src" "$dst" > /dev/null 2>&1; then
+  if ! files_differ "$src" "$dst"; then
     echo -e "${BOLD}${CYAN}=== $src_rel ===${RESET}"
     echo -e "  ${GREEN}Up to date.${RESET}"
     echo ""
   else
     echo -e "${BOLD}${CYAN}=== $src_rel ===${RESET}"
-    diff --color=always -u "$dst" "$src" | head -80 || true
+    diff --color=always -u --label "$dst" --label "$src" <(normalize "$dst") <(normalize "$src") | head -80 || true
     echo ""
     echo -e "${YELLOW}${BOLD}Update this file? [y/N]${RESET} \c"
     read -r answer
