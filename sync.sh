@@ -19,6 +19,8 @@ declare -A FILE_MAP=(
   ["opencode/opencode.json"]="$HOME/.config/opencode/opencode.json"
   ["codex/AGENTS.md"]="$HOME/.codex/AGENTS.md"
   ["codex/config.toml"]="$HOME/.codex/config.toml"
+  ["pi/AGENTS.md"]="$HOME/.pi/agent/AGENTS.md"
+  ["pi/settings.json"]="$HOME/.pi/agent/settings.json"
 )
 
 # Codex appends per-machine tables to config.toml; keep those, replace the rest.

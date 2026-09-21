@@ -1,0 +1,9 @@
+{
+  "defaultProvider": "velocirouter",
+  "defaultModel": "gpt-6-astra",
+  "defaultThinkingLevel": "high",
+  "theme": "dark",
+  "packages": [
+    "npm:@velocirouter/pi"
+  ]
+}
