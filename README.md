@@ -26,12 +26,15 @@ The script diffs each file against its target and prompts before creating or upd
 | `opencode/opencode.json` | `~/.config/opencode/opencode.json` | Provider and model config |
 | `pi/AGENTS.md` | `~/.pi/agent/AGENTS.md` | Global instructions |
 | `pi/settings.json` | `~/.pi/agent/settings.json` | Default model, theme, and packages |
+| `pi/agents/reviewer.md` | `~/.pi/agent/agents/reviewer.md` | Read-only code review subagent |
 
 ## Pi
 
 Pi settings contain portable preferences and package sources, not credentials or runtime state. Pi installs missing packages on startup. Authenticate separately on each machine.
 
 Pi also writes to `settings.json` through `/settings` and package commands. Review the sync diff before accepting: the script replaces the whole file, so copy any local preferences you want to keep back into this repo first.
+
+The reviewer definition is shared, but the subagent runtime is not standardized yet. Manage it per machine and enable only one implementation at a time. If a local package such as `pi-subagents` is listed in `settings.json`, skip syncing that file while evaluating; syncing replaces the whole file and would remove the local package entry. Switching runtimes can change prompt and context inheritance, so verify the reviewer follows repository instructions and does not edit files.
 
 Do not commit `auth.json`, session history, trust decisions, downloaded packages, or generated model catalogs. If you add `models.json`, use environment references such as `"apiKey": "$MY_API_KEY"` instead of literal credentials.
 
