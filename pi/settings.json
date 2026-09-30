@@ -1,11 +1,14 @@
 {
+  "lastChangelogVersion": "0.99.1",
   "defaultProvider": "velocirouter",
-  "defaultModel": "gpt-6-astra",
+  "defaultModel": "gpt-6-astra-fast",
   "defaultThinkingLevel": "high",
   "theme": "dark",
   "packages": [
     "npm:@velocirouter/pi",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-mcp-adapter@2.37.0"
-  ]
+    "npm:pi-mcp-adapter@2.37.0",
+    "npm:pi-model-plus"
+  ],
+  "extensions": ["-builtin:mcp"]
 }
