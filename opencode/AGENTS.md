@@ -25,3 +25,4 @@
 ## Git Conventions
 
 1. **Commit messages**: Should be descriptive yet concise
+2. **Prefer merge commits**: Use a normal merge commit when merging, not a squash merge.
