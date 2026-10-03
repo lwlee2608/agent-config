@@ -8,7 +8,9 @@
     "npm:@velocirouter/pi",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-mcp-adapter@2.37.0",
-    "npm:pi-model-plus"
+    "npm:@lwlee2608/pi-model-plus",
+    "npm:@lwlee2608/pi-session-board",
+    "npm:@lwlee2608/pi-footer"
   ],
   "extensions": ["-builtin:mcp"]
 }
