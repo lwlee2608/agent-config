@@ -1,16 +1,19 @@
 {
-  "lastChangelogVersion": "0.99.1",
+  "lastChangelogVersion": "1.0.2",
   "defaultProvider": "velocirouter",
-  "defaultModel": "gpt-6-astra-fast",
+  "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "high",
   "theme": "dark",
   "packages": [
     "npm:@velocirouter/pi",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-mcp-adapter@2.37.0",
-    "npm:@lwlee2608/pi-model-plus",
     "npm:@lwlee2608/pi-session-board",
-    "npm:@lwlee2608/pi-footer"
+    "npm:@lwlee2608/pi-model-plus",
+    "npm:@lwlee2608/pi-footer",
+    "npm:@agent-sh/computer-use-linux"
   ],
-  "extensions": ["-builtin:mcp"]
+  "extensions": [
+    "-builtin:mcp"
+  ]
 }
