@@ -40,7 +40,8 @@
   "autoMode": {
     "allow": [
       "$defaults",
-      "Owner Merge: the user has merge authority on all their repos and cannot approve their own PRs. A normal merge of a PR the user asked to merge is NOT Merge Without Review. --admin or bypassing branch protection/required checks still blocks."
+      "Owner Merge: the user has merge authority on all their repos and cannot approve their own PRs. A normal merge of a PR the user asked to merge is NOT Merge Without Review. --admin or bypassing branch protection/required checks still blocks.",
+      "Own Production DB: when the project's CLAUDE.md identifies a production database as the user's own, fetching its connection URL via the project's hosting CLI and running read-only queries against it is allowed. Writes to it (INSERT/UPDATE/DELETE/DDL) are NOT Modify Shared Resources when, earlier in the conversation, Claude gave a short summary of the effect (which rows/values change and why) and the user explicitly approved that specific change; without that approval, block. A blocked write does not taint later local reads or doc edits in the repo."
     ]
   },
   "disableClaudeAiConnectors": true,
