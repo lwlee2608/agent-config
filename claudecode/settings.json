@@ -2,7 +2,7 @@
   "env": {
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "600000",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "700000",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "80",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": "0"
   },
@@ -37,6 +37,12 @@
     "deny": ["EnterPlanMode", "ExitPlanMode"],
     "defaultMode": "auto"
   },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Owner Merge: the user has merge authority on all their repos and cannot approve their own PRs. A normal merge of a PR the user asked to merge is NOT Merge Without Review. --admin or bypassing branch protection/required checks still blocks."
+    ]
+  },
   "disableClaudeAiConnectors": true,
   "disableWorkflows": true,
   "disableArtifact": true,
@@ -55,6 +61,7 @@
     "handoff": "off"
   },
   "editorMode": "vim",
+  "switchModelsOnFlag": false,
   "effortLevel": "high",
   "outputStyle": "Concise",
   "tui": "fullscreen",
