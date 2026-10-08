@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.3",
+  "lastChangelogVersion": "1.0.4",
   "defaultProvider": "velocirouter",
   "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "high",
@@ -7,14 +7,30 @@
   "packages": [
     "npm:@velocirouter/pi",
     "npm:pi-mcp-adapter@2.37.0",
-    "npm:pi-subagents",
     "npm:@lwlee2608/pi-session-board",
     "npm:@lwlee2608/pi-model-plus",
     "npm:@lwlee2608/pi-footer",
-    "npm:@lwlee2608/pi-ask-user",
-    "../../src/github/lwlee2608/pi-extensions/packages/code-blocks"
+    {
+      "source": "npm:@agent-sh/computer-use-linux",
+      "skills": [
+        "-skills/computer-use-linux/SKILL.md"
+      ],
+      "extensions": [
+        "-pi/extension/index.ts"
+      ]
+    },
+    {
+      "source": "../../src/github/lwlee2608/pi-extensions/packages/code-blocks",
+      "extensions": [
+        "+src/index.ts"
+      ]
+    },
+    "npm:@lwlee2608/pi-ask-user@latest",
+    "npm:@lwlee2608/pi-subagent",
+    "npm:@lwlee2608/pi-notify"
   ],
   "extensions": [
-    "-builtin:mcp"
+    "-builtin:mcp",
+    "-extensions/subagent/index.ts"
   ]
 }
