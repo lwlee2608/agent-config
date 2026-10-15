@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.4",
+  "lastChangelogVersion": "1.2.0",
   "defaultProvider": "velocirouter",
   "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "high",
@@ -27,7 +27,8 @@
     },
     "npm:@lwlee2608/pi-ask-user@latest",
     "npm:@lwlee2608/pi-subagent",
-    "npm:@lwlee2608/pi-notify"
+    "npm:@lwlee2608/pi-notify",
+    "npm:pi-web-search@1.7.0"
   ],
   "extensions": [
     "-builtin:mcp",
