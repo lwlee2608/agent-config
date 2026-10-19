@@ -68,6 +68,7 @@
   "outputStyle": "Concise",
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
+  "preferredNotifChannel": "terminal_bell",
   "skipAutoPermissionPrompt": true,
   "statusLine": {
     "type": "command",
