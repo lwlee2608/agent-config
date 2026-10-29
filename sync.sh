@@ -2,6 +2,13 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+FILTER="${1:-}"
+FILTER="${FILTER%/}"
+
+if [[ -n "$FILTER" && ! -d "$REPO_DIR/$FILTER" ]]; then
+  echo "Unknown target: $FILTER" >&2
+  exit 1
+fi
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -60,6 +67,7 @@ merged_source() {
 }
 
 for src_rel in "${!FILE_MAP[@]}"; do
+  [[ -n "$FILTER" && "$src_rel" != "$FILTER/"* ]] && continue
   src="$(merged_source "$REPO_DIR/$src_rel" "${FILE_MAP[$src_rel]}")"
   dst="${FILE_MAP[$src_rel]}"
 
