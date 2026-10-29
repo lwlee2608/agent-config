@@ -26,11 +26,16 @@ The script diffs each file against its target and prompts before creating or upd
 | `opencode/opencode.json` | `~/.config/opencode/opencode.json` | Provider and model config |
 | `pi/AGENTS.md` | `~/.pi/agent/AGENTS.md` | Global instructions |
 | `pi/settings.json` | `~/.pi/agent/settings.json` | Default model, theme, and packages |
+| `pi/mcp.json` | `~/.pi/agent/mcp.json` | Railway and Linear MCP servers (no credentials) |
 | `pi/agents/reviewer.md` | `~/.pi/agent/agents/reviewer.md` | Read-only code review subagent |
 
 ## Pi
 
 Pi settings contain portable preferences and package sources, not credentials or runtime state. Pi installs missing packages on startup. Authenticate separately on each machine.
+
+The MCP config uses `pi-mcp-adapter`. Install the Railway CLI and run `railway login` on each machine; authenticate Linear separately through `/mcp-auth linear`. Run `/reload` after syncing MCP changes. Sync replaces the whole MCP config, so copy any local server entries you want to keep into this repo first. Do not commit tokens or MCP auth/cache files.
+
+Railway is not pinned to one workspace. Link each repo with `railway link --workspace "<workspace>" --project "<project>" --environment "<environment>"` and record the target in that repo's `AGENTS.md`. Before operations, verify `railway status` and use the matching project, environment, and service IDs in MCP calls. The CLI link is not an MCP access restriction.
 
 Pi also writes to `settings.json` through `/settings` and package commands. Review the sync diff before accepting: the script replaces the whole file, so copy any local preferences you want to keep back into this repo first.
 

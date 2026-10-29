@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "railway": {
+      "command": "railway",
+      "args": ["mcp"],
+      "directTools": false,
+      "toolPrefix": "mcp"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "auth": "oauth",
+      "directTools": false,
+      "toolPrefix": "mcp"
+    }
+  }
+}
