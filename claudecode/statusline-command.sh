@@ -12,9 +12,16 @@ total_cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 
 if [ -f "$transcript" ]; then
-  read -r cached uncached elapsed < <(jq -nr '
-    reduce inputs as $e ({u: {}, s: null, a: null};
+  read -r cached uncached elapsed last_call ttl < <(jq -nr '
+    reduce inputs as $e ({u: {}, s: null, a: null, c: null, ttl: 300};
         (if $e.message.usage then .u[($e.requestId // $e.uuid)] = $e.message.usage else . end)
+      | (if $e.message.usage and $e.timestamp and ($e.isSidechain | not)
+         then .c = $e.timestamp
+            | .ttl = (($e.message.usage.cache_creation // {}) as $cc
+                | if ($cc.ephemeral_1h_input_tokens // 0) > 0 then 3600
+                  elif ($cc.ephemeral_5m_input_tokens // 0) > 0 then 300
+                  else .ttl end)
+         else . end)
       | (if $e.type == "user" and $e.origin.kind == "human" and ($e.isSidechain | not)
          then .s = $e.timestamp | .a = null
          elif $e.type == "assistant" and $e.timestamp
@@ -24,7 +31,9 @@ if [ -f "$transcript" ]; then
        ([.u[]] | map((.input_tokens // 0) + (.cache_creation_input_tokens // 0)) | add // 0),
        (if .s and .a
         then ((.a[0:19] + "Z" | fromdateiso8601) - (.s[0:19] + "Z" | fromdateiso8601))
-        else "-" end)]
+        else "-" end),
+       (if .c then (.c[0:19] + "Z" | fromdateiso8601) else "-" end),
+       .ttl]
     | @tsv' "$transcript" 2>/dev/null)
 fi
 
@@ -89,6 +98,15 @@ fi
 
 if [ -n "$elapsed" ] && [ "$elapsed" != "-" ] 2>/dev/null; then
   line="$line • $(fmt_d "$elapsed")"
+fi
+
+if [ -n "$last_call" ] && [ "$last_call" != "-" ]; then
+  left=$(( last_call + ttl - $(date +%s) ))
+  if [ "$left" -gt 0 ]; then
+    line="$line • cache $(fmt_d "$left")"
+  else
+    line="$line • "$'\033[0m\033[38;5;167m'"cache cold"$'\033[0m\033[2m'
+  fi
 fi
 
 # if [ -n "$five_hour_pct" ]; then

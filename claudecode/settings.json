@@ -84,7 +84,8 @@
   "skipAutoPermissionPrompt": true,
   "statusLine": {
     "type": "command",
-    "command": "bash ~/.claude/statusline-command.sh"
+    "command": "bash ~/.claude/statusline-command.sh",
+    "refreshInterval": 30
   },
   "attribution": {
     "commit": "",
