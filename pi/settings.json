@@ -15,6 +15,5 @@
     "npm:@lwlee2608/pi-notify",
     "npm:@lwlee2608/pi-browser",
     "npm:pi-web-search@1.7.0"
-  ],
-  "extensions": ["-extensions/subagent/index.ts"]
+  ]
 }
