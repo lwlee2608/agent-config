@@ -33,7 +33,9 @@ The script diffs each file against its target and prompts before creating or upd
 
 Pi settings contain portable preferences and package sources, not credentials or runtime state. Pi installs missing packages on startup. Authenticate separately on each machine.
 
-The MCP config uses `pi-mcp-adapter`. Install the Railway CLI and run `railway login` on each machine; authenticate Linear separately through `/mcp-auth linear`. Run `/reload` after syncing MCP changes. Sync replaces the whole MCP config, so copy any local server entries you want to keep into this repo first. Do not commit tokens or MCP auth/cache files.
+The MCP config uses Pi's built-in MCP support with the default `codemode` tool exposure. Install the Railway CLI and run `railway login` on each machine; authenticate Linear separately through `pi mcp login linear` or `/mcp login linear` inside Pi. Run `pi mcp list` to check connections and `/reload` after syncing MCP changes. Sync replaces the whole MCP config, so copy any local server entries you want to keep into this repo first. Do not commit tokens or MCP auth/cache files.
+
+When migrating from `pi-mcp-adapter`, sync both `pi/settings.json` and `pi/mcp.json`, then restart Pi. Sign in to Linear again: built-in MCP stores credentials in `~/.pi/agent/mcp-auth.json`, separately from the adapter's credential store. Use `codemode` for scripted MCP calls instead of `mcpScript`.
 
 Railway is not pinned to one workspace. Link each repo with `railway link --workspace "<workspace>" --project "<project>" --environment "<environment>"` and record the target in that repo's `AGENTS.md`. Before operations, verify `railway status` and use the matching project, environment, and service IDs in MCP calls. The CLI link is not an MCP access restriction.
 
