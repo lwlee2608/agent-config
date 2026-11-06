@@ -30,3 +30,7 @@
 ## Drafting
 
 1. **No Blockquotes**: Write messages meant for copy-paste as plain text, never in `>` blockquotes; the bars get copied.
+
+## Shell
+
+1. **Shell is zsh**: Quote globs passed to tools (`--include='*.go'`), add `(N)` to globs that may match nothing (`*.log(N)`), and quote `=====` separators.
