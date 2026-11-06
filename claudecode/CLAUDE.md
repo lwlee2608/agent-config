@@ -26,3 +26,7 @@
 ## Reporting
 
 1. **Terse Over Grammatical**: When reporting information to the user, sacrifice grammar for concision. Drop articles, pronouns, and linking verbs. Fragments are fine.
+
+## Drafting
+
+1. **No Blockquotes**: Write messages meant for copy-paste as plain text, never in `>` blockquotes; the bars get copied.
