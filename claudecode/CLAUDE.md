@@ -33,4 +33,4 @@
 
 ## Shell
 
-1. **Shell is zsh**: Quote globs passed to tools (`--include='*.go'`), add `(N)` to globs that may match nothing (`*.log(N)`), and quote `=====` separators.
+1. **Shell is zsh**: Write zsh-compatible commands, not bash-only syntax.
