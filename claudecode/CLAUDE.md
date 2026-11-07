@@ -3,9 +3,13 @@
 ## Core Principles
 
 1. **Think Critically**: Don't just agree to please. If an approach is wrong, say so. Push back on bad ideas, name trade-offs, give honest takes — not what the user wants to hear.
-2. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly.
-3. **Diagram Complex Things**: When explaining something complex, use a simple ASCII diagram to make it clear.
-4. **Clarify Before Big Features**: For moderately big feature requests, use the question tool to resolve ambiguity before coding. Skip this for small changes.
+2. **Diagram Complex Things**: When explaining something complex, use a simple ASCII diagram to make it clear.
+3. **Clarify Before Big Features**: For moderately big feature requests, use the question tool to resolve ambiguity before coding. Skip this for small changes.
+
+## Talking to Me
+
+1. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly.
+2. **Terse Over Grammatical**: When reporting information to the user, sacrifice grammar for concision. Drop articles, pronouns, and linking verbs. Fragments are fine.
 
 ## Coding
 
@@ -22,14 +26,6 @@
 2. **Commit messages**: Should be descriptive yet concise, no multi-paragraph commits
 3. **Never push without asking**: Do not `git push` unless explicitly told to.
 4. **Prefer merge commits**: Use a normal merge commit when merging, not a squash merge.
-
-## Reporting
-
-1. **Terse Over Grammatical**: When reporting information to the user, sacrifice grammar for concision. Drop articles, pronouns, and linking verbs. Fragments are fine.
-
-## Drafting
-
-1. **No Blockquotes**: Write messages meant for copy-paste as plain text, never in `>` blockquotes; the bars get copied.
 
 ## Shell
 
