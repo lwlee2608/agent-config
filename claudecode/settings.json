@@ -80,6 +80,7 @@
   "editorMode": "vim",
   "switchModelsOnFlag": false,
   "effortLevel": "high",
+  "advisorModel": "claude-fable-5-2",
   "outputStyle": "Concise",
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
