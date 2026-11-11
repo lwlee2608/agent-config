@@ -27,6 +27,7 @@ declare -A FILE_MAP=(
   ["codex/AGENTS.md"]="$HOME/.codex/AGENTS.md"
   ["codex/config.toml"]="$HOME/.codex/config.toml"
   ["pi/AGENTS.md"]="$HOME/.pi/agent/AGENTS.md"
+  ["pi/APPEND_SYSTEM.md"]="$HOME/.pi/agent/APPEND_SYSTEM.md"
   ["pi/settings.json"]="$HOME/.pi/agent/settings.json"
   ["pi/mcp.json"]="$HOME/.pi/agent/mcp.json"
   ["pi/web-search.json"]="$HOME/.pi/agent/web-search.json"
