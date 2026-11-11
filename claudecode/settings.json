@@ -81,7 +81,7 @@
   "switchModelsOnFlag": false,
   "effortLevel": "high",
   "advisorModel": "claude-fable-5-2",
-  "outputStyle": "Concise",
+  "outputStyle": "Simple",
   "tui": "fullscreen",
   "agentPushNotifEnabled": true,
   "preferredNotifChannel": "terminal_bell",

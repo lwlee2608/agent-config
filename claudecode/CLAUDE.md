@@ -9,7 +9,6 @@
 ## Talking to Me
 
 1. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly and plainly.
-2. **Terse Over Grammatical**: When reporting information to the user, sacrifice grammar for concision. Drop articles, pronouns, and linking verbs. Fragments are fine.
 
 ## Coding
 
