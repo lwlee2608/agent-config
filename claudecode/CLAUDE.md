@@ -9,6 +9,7 @@
 ## Talking to Me
 
 1. **Be Concise**: Keep replies short. Skip preamble, recaps, and filler. Use simple English. Answer directly and plainly.
+2. **Name the Actor in Questions**: When a question or option says who acts, write "the user" or "the agent", not "you" or "I".
 
 ## Coding
 
