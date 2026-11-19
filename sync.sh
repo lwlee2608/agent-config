@@ -22,6 +22,7 @@ declare -A FILE_MAP=(
   ["claudecode/settings.json"]="$HOME/.claude/settings.json"
   ["claudecode/statusline-command.sh"]="$HOME/.claude/statusline-command.sh"
   ["claudecode/output-styles/simple.md"]="$HOME/.claude/output-styles/simple.md"
+  ["claudecode/output-styles/terse.md"]="$HOME/.claude/output-styles/terse.md"
   ["opencode/AGENTS.md"]="$HOME/.config/opencode/AGENTS.md"
   ["opencode/opencode.json"]="$HOME/.config/opencode/opencode.json"
   ["codex/AGENTS.md"]="$HOME/.codex/AGENTS.md"

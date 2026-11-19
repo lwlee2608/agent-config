@@ -20,6 +20,7 @@ The script diffs each file against its target and prompts before creating or upd
 | `claudecode/settings.json` | `~/.claude/settings.json` | Permissions and plugins |
 | `claudecode/statusline-command.sh` | `~/.claude/statusline-command.sh` | Custom statusline script |
 | `claudecode/output-styles/simple.md` | `~/.claude/output-styles/simple.md` | "Simple" output style (ASD-STE100) |
+| `claudecode/output-styles/terse.md` | `~/.claude/output-styles/terse.md` | "Terse" output style (shortest replies, ASD-STE100) |
 | `codex/AGENTS.md` | `~/.codex/AGENTS.md` | Global instructions |
 | `codex/config.toml` | `~/.codex/config.toml` | Model, approval and sandbox settings (merged; machine-local `[projects]`, `[notice]`, `[tui]` tables are preserved) |
 | `opencode/AGENTS.md` | `~/.config/opencode/AGENTS.md` | Global instructions |
