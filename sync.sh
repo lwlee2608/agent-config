@@ -38,6 +38,8 @@ declare -A FILE_MAP=(
 # Codex appends per-machine tables to config.toml; keep those, replace the rest.
 LOCAL_TOML_TABLES='^\[(projects\.|notice\.|tui\.)'
 
+HOST_RULES="$REPO_DIR/claudecode/hosts/$(hostname -s).md"
+
 updated=0
 skipped=0
 
@@ -58,11 +60,14 @@ local_toml_tables() {
 }
 
 merged_source() {
-  local src="$1" dst="$2"
+  local src="$1" dst="$2" tmp
   if [[ "$src" == *.toml && -f "$dst" ]]; then
-    local tmp
     tmp="$(mktemp)"
     { cat "$src"; echo; local_toml_tables "$dst"; } > "$tmp"
+    echo "$tmp"
+  elif [[ "$src" == */claudecode/CLAUDE.md && -f "$HOST_RULES" ]]; then
+    tmp="$(mktemp)"
+    cat "$src" "$HOST_RULES" > "$tmp"
     echo "$tmp"
   else
     echo "$src"
